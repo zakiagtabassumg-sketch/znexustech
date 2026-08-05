@@ -107,17 +107,17 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ onSelectMemberService 
         </div>
 
         {/* Team Grid (3 Cards) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
           {teamMembers.map((member) => (
             <div
               key={member.id}
-              className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-slate-700 transition-all duration-300 shadow-xl group hover:shadow-2xl hover:shadow-orange-950/20"
+              className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-slate-700 transition-all duration-300 shadow-xl group hover:shadow-2xl hover:shadow-orange-950/20 h-full"
             >
-              <div className="space-y-6">
+              <div className="flex-1 flex flex-col space-y-5">
                 
                 {/* Image & Badge Header */}
                 <div className="relative">
-                  <div className="relative w-full h-64 sm:h-72 rounded-xl overflow-hidden border border-slate-800 bg-slate-950">
+                  <div className="relative w-full h-64 rounded-xl overflow-hidden border border-slate-800 bg-slate-950">
                     <img
                       src={member.image}
                       alt={`${member.name} - ${member.role}`}
@@ -129,20 +129,20 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ onSelectMemberService 
                         else if (member.id === 'javeriya') e.currentTarget.src = '/javeriya_bot_photo_1785864340391.jpg';
                         else e.currentTarget.src = '/zakia_tabassum_profile_1785831452707.jpg';
                       }}
-                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent pointer-events-none" />
 
                     {/* Badge Overlay */}
-                    <div className="absolute top-3 right-3">
-                      <span className={`inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-bold border backdrop-blur-md ${member.badgeColor}`}>
+                    <div className="absolute top-3 right-3 z-10">
+                      <span className={`inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-bold border backdrop-blur-md shadow-sm ${member.badgeColor}`}>
                         {member.icon}
-                        <span>{member.badge}</span>
+                        <span className="whitespace-nowrap">{member.badge}</span>
                       </span>
                     </div>
 
                     {/* Bottom Stat Overlay */}
-                    <div className="absolute bottom-3 left-3 right-3 bg-slate-950/80 backdrop-blur-md p-2.5 rounded-lg border border-slate-800/80 flex items-center justify-between">
+                    <div className="absolute bottom-3 left-3 right-3 bg-slate-950/80 backdrop-blur-md p-2.5 rounded-lg border border-slate-800/80 flex items-center justify-between z-10">
                       <span className="text-xs text-slate-400 font-medium">{member.statsLabel}</span>
                       <span className="text-sm font-black text-amber-400">{member.statsVal}</span>
                     </div>
@@ -150,12 +150,12 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ onSelectMemberService 
                 </div>
 
                 {/* Member Info */}
-                <div className="space-y-2">
-                  <div className="flex items-center justify-between">
+                <div className="space-y-2 flex-1 flex flex-col justify-start">
+                  <div className="flex items-center justify-between gap-2">
                     <h3 className="text-xl font-black text-white group-hover:text-amber-300 transition-colors">
                       {member.name}
                     </h3>
-                    <span className="text-xs font-bold text-orange-400 bg-orange-500/10 px-2.5 py-1 rounded-md border border-orange-500/20">
+                    <span className="text-xs font-bold text-orange-400 bg-orange-500/10 px-2.5 py-1 rounded-md border border-orange-500/20 whitespace-nowrap">
                       {member.role}
                     </span>
                   </div>
@@ -166,7 +166,7 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ onSelectMemberService 
                 </div>
 
                 {/* Key Skills Bullet List */}
-                <div className="pt-2 space-y-2 border-t border-slate-800/80">
+                <div className="pt-3 space-y-2 border-t border-slate-800/80">
                   <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Core Expertise</div>
                   <ul className="space-y-1.5 text-xs text-slate-300">
                     {member.specialties.map((spec, i) => (
@@ -180,7 +180,7 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ onSelectMemberService 
               </div>
 
               {/* Action Button */}
-              <div className="pt-6 mt-6 border-t border-slate-800">
+              <div className="pt-5 mt-5 border-t border-slate-800">
                 <button
                   onClick={() => onSelectMemberService(`Inquiry for ${member.name} (${member.role})`)}
                   className="w-full inline-flex items-center justify-center space-x-2 py-2.5 px-4 text-xs font-bold text-slate-900 bg-gradient-to-r from-orange-400 via-amber-400 to-pink-400 hover:from-orange-300 hover:to-pink-300 rounded-xl transition-all shadow-md group-hover:shadow-lg active:scale-95"
