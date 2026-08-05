@@ -18,10 +18,13 @@ import { PortfolioConfig } from './types';
 
 export default function App() {
   const [config, setConfig] = useState<PortfolioConfig>(() => {
-    const saved = localStorage.getItem('znexustech_config');
+    const saved = localStorage.getItem('znexustech_config_v3');
     if (saved) {
       try {
-        return JSON.parse(saved);
+        const parsed = JSON.parse(saved);
+        if (parsed.heroSubheading && !parsed.heroSubheading.includes('chatbots')) {
+          return parsed;
+        }
       } catch (e) {
         return defaultPortfolioConfig;
       }
@@ -35,12 +38,12 @@ export default function App() {
 
   const handleSaveConfig = (updated: PortfolioConfig) => {
     setConfig(updated);
-    localStorage.setItem('znexustech_config', JSON.stringify(updated));
+    localStorage.setItem('znexustech_config_v3', JSON.stringify(updated));
   };
 
   const handleResetConfig = () => {
     setConfig(defaultPortfolioConfig);
-    localStorage.removeItem('znexustech_config');
+    localStorage.removeItem('znexustech_config_v3');
   };
 
   const scrollToSection = (id: string) => {

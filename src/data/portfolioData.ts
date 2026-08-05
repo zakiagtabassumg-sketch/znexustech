@@ -3,9 +3,9 @@ import { PortfolioConfig, ServiceItem, CaseStudy, Testimonial } from '../types';
 export const defaultPortfolioConfig: PortfolioConfig = {
   name: "Zakia Tabassum",
   brandName: "ZNEXUSTECH",
-  tagline: "Webpage & Software Developer, n8n AI Chatbots & Performance Growth Specialist",
-  heroHeadline: "Web Development from Scratch, n8n Chatbots, Software Engineering & Paid Growth",
-  heroSubheading: "Hi, I'm Zakia Tabassum. I build custom high-performance websites from scratch, engineer automated n8n AI chatbots, develop full-stack software applications, and scale brands with Meta & Google Ads and technical SEO.",
+  tagline: "Founder & Growth Consultant | Meta & Google Ads & Technical SEO Specialist",
+  heroHeadline: "Meta & Google Ads, Performance Growth & Technical SEO Strategy",
+  heroSubheading: "Hi, I'm Zakia Tabassum, Founder & Growth Consultant at ZNEXUSTECH. I specialize in scaling brands through high-ROAS Meta & Google Ads campaigns and data-driven technical SEO strategies.",
   email: "zakiagtabassumg@gmail.com",
   phone: "+1 (555) 382-9200",
   location: "Global Remote Specialist / Available Worldwide",
@@ -18,7 +18,7 @@ export const defaultPortfolioConfig: PortfolioConfig = {
     brandsScaled: "50+",
     clientRetention: "99.4%"
   },
-  aboutBio: "I am Zakia Tabassum, Founder & Lead Developer at ZNEXUSTECH. As a Webpage Developer from Scratch, n8n Chatbot & Automation Engineer, Software Developer, and Growth Marketer, I deliver complete end-to-end digital engineering. From clean custom code bases without heavy plugins to intelligent AI workflows and high-ROAS advertising campaigns, I turn complex business ideas into seamless digital reality."
+  aboutBio: "I am Zakia Tabassum, Founder & Growth Consultant at ZNEXUSTECH. Dedicated to performance marketing and digital growth, I craft high-converting Meta & Google Ads campaigns and technical SEO strategies that predictably scale revenue and maximize return on ad spend."
 };
 
 export const servicesData: ServiceItem[] = [
