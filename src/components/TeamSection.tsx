@@ -122,6 +122,13 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ onSelectMemberService 
                       src={member.image}
                       alt={`${member.name} - ${member.role}`}
                       referrerPolicy="no-referrer"
+                      onError={(e) => {
+                        e.currentTarget.onerror = null;
+                        if (member.id === 'zoya') e.currentTarget.src = '/zoya_dev_photo_1785864314786.jpg';
+                        else if (member.id === 'sadia') e.currentTarget.src = '/sadia_seo_photo_1785864327769.jpg';
+                        else if (member.id === 'javeriya') e.currentTarget.src = '/javeriya_bot_photo_1785864340391.jpg';
+                        else e.currentTarget.src = '/zakia_tabassum_profile_1785831452707.jpg';
+                      }}
                       className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />

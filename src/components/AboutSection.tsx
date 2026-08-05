@@ -23,6 +23,10 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ config, onOpenCustom
                   src={ZAKIA_PROFILE}
                   alt={config.name}
                   referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = '/zakia_tabassum_profile_1785831452707.jpg';
+                  }}
                   className="w-full h-80 object-cover object-center rounded-xl"
                 />
 
@@ -32,7 +36,11 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ config, onOpenCustom
                       src={ZNEXUSTECH_LOGO}
                       alt={config.brandName}
                       referrerPolicy="no-referrer"
-                      className="w-8 h-8 rounded-lg bg-white p-0.5"
+                      onError={(e) => {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = '/znexustech_logo_1785831438668.jpg';
+                      }}
+                      className="w-8 h-8 rounded-lg bg-white p-0.5 object-cover"
                     />
                     <div>
                       <div className="text-xs font-bold text-white">{config.name}</div>

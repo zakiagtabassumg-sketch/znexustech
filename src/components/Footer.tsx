@@ -25,7 +25,11 @@ export const Footer: React.FC<FooterProps> = ({ config, onOpenCustomizer, onScro
               src={ZNEXUSTECH_LOGO}
               alt={config.brandName}
               referrerPolicy="no-referrer"
-              className="w-10 h-10 rounded-xl bg-white p-0.5 border border-slate-700"
+              onError={(e) => {
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = '/znexustech_logo_1785831438668.jpg';
+              }}
+              className="w-10 h-10 rounded-xl bg-white p-0.5 border border-slate-700 object-cover"
             />
             <div>
               <div className="text-lg font-black text-white tracking-tight">{config.brandName}</div>

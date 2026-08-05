@@ -37,6 +37,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ config, onScrollToSect
                       src={ZNEXUSTECH_LOGO}
                       alt={config.brandName}
                       referrerPolicy="no-referrer"
+                      onError={(e) => {
+                        e.currentTarget.onerror = null;
+                        e.currentTarget.src = '/znexustech_logo_1785831438668.jpg';
+                      }}
                       className="w-9 h-9 rounded-lg bg-white p-0.5 border border-slate-700"
                     />
                     <div>
@@ -57,6 +61,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ config, onScrollToSect
                     src={ZAKIA_PROFILE}
                     alt={config.name}
                     referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = '/zakia_tabassum_profile_1785831452707.jpg';
+                    }}
                     className="w-full h-80 sm:h-96 object-cover object-center rounded-xl group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
