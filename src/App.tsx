@@ -136,14 +136,16 @@ export default function App() {
         onScrollToSection={scrollToSection}
       />
 
-      {/* Interactive Live Customizer Drawer */}
-      <LiveCustomizerModal
-        isOpen={customizerOpen}
-        config={config}
-        onSave={handleSaveConfig}
-        onReset={handleResetConfig}
-        onClose={() => setCustomizerOpen(false)}
-      />
+      {/* Interactive Live Customizer Drawer (Dev Mode Only) */}
+      {import.meta.env.DEV && (
+        <LiveCustomizerModal
+          isOpen={customizerOpen}
+          config={config}
+          onSave={handleSaveConfig}
+          onReset={handleResetConfig}
+          onClose={() => setCustomizerOpen(false)}
+        />
+      )}
     </div>
   );
 }

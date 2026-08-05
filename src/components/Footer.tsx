@@ -54,9 +54,11 @@ export const Footer: React.FC<FooterProps> = ({ config, onOpenCustomizer, onScro
             <button onClick={() => onScrollToSection('contact')} className="hover:text-white transition-colors">
               Contact
             </button>
-            <button onClick={onOpenCustomizer} className="text-amber-400 hover:underline">
-              Live Customizer
-            </button>
+            {import.meta.env.DEV && (
+              <button onClick={onOpenCustomizer} className="text-amber-400 hover:underline">
+                Live Customizer
+              </button>
+            )}
           </div>
 
           {/* Scroll to Top */}

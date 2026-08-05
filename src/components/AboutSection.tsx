@@ -48,12 +48,14 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ config, onOpenCustom
                     </div>
                   </div>
 
-                  <button
-                    onClick={onOpenCustomizer}
-                    className="text-[10px] font-bold text-amber-300 bg-amber-500/10 px-2.5 py-1 rounded-lg border border-amber-500/30 hover:bg-amber-500/20"
-                  >
-                    Edit Bio
-                  </button>
+                  {import.meta.env.DEV && (
+                    <button
+                      onClick={onOpenCustomizer}
+                      className="text-[10px] font-bold text-amber-300 bg-amber-500/10 px-2.5 py-1 rounded-lg border border-amber-500/30 hover:bg-amber-500/20"
+                    >
+                      Edit Bio
+                    </button>
+                  )}
                 </div>
               </div>
             </div>

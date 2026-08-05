@@ -118,15 +118,17 @@ export const Navbar: React.FC<NavbarProps> = ({ config, onOpenCustomizer, onScro
 
           {/* Action Buttons (Right) */}
           <div className="hidden sm:flex items-center space-x-2.5">
-            {/* Live Portfolio Customizer Toggle */}
-            <button
-              onClick={onOpenCustomizer}
-              className="flex items-center space-x-1 px-2.5 py-1.5 text-xs font-semibold text-amber-300 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-lg transition-all"
-              title="Customize Name & Info"
-            >
-              <Edit3 className="w-3.5 h-3.5 text-amber-400" />
-              <span className="hidden md:inline">Edit Content</span>
-            </button>
+            {/* Live Portfolio Customizer Toggle (Dev mode only) */}
+            {import.meta.env.DEV && (
+              <button
+                onClick={onOpenCustomizer}
+                className="flex items-center space-x-1 px-2.5 py-1.5 text-xs font-semibold text-amber-300 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 rounded-lg transition-all"
+                title="Customize Name & Info"
+              >
+                <Edit3 className="w-3.5 h-3.5 text-amber-400" />
+                <span className="hidden md:inline">Edit Content</span>
+              </button>
+            )}
 
             {/* Direct WhatsApp button */}
             <a
@@ -151,13 +153,15 @@ export const Navbar: React.FC<NavbarProps> = ({ config, onOpenCustomizer, onScro
 
           {/* Mobile Menu Toggle */}
           <div className="flex items-center space-x-2 xl:hidden">
-            <button
-              onClick={onOpenCustomizer}
-              className="p-2 text-amber-400 bg-amber-500/10 rounded-lg border border-amber-500/30 sm:hidden"
-              title="Customize"
-            >
-              <Edit3 className="w-4 h-4" />
-            </button>
+            {import.meta.env.DEV && (
+              <button
+                onClick={onOpenCustomizer}
+                className="p-2 text-amber-400 bg-amber-500/10 rounded-lg border border-amber-500/30 sm:hidden"
+                title="Customize"
+              >
+                <Edit3 className="w-4 h-4" />
+              </button>
+            )}
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -203,16 +207,18 @@ export const Navbar: React.FC<NavbarProps> = ({ config, onOpenCustomizer, onScro
                   <span>Chat on WhatsApp ({config.phone})</span>
                 </a>
 
-                <button
-                  onClick={() => {
-                    onOpenCustomizer();
-                    setMobileMenuOpen(false);
-                  }}
-                  className="w-full flex items-center justify-center space-x-2 py-2.5 px-4 text-xs font-bold text-amber-300 bg-amber-500/10 border border-amber-500/30 rounded-xl"
-                >
-                  <Edit3 className="w-4 h-4" />
-                  <span>Customize Portfolio Live</span>
-                </button>
+                {import.meta.env.DEV && (
+                  <button
+                    onClick={() => {
+                      onOpenCustomizer();
+                      setMobileMenuOpen(false);
+                    }}
+                    className="w-full flex items-center justify-center space-x-2 py-2.5 px-4 text-xs font-bold text-amber-300 bg-amber-500/10 border border-amber-500/30 rounded-xl"
+                  >
+                    <Edit3 className="w-4 h-4" />
+                    <span>Customize Portfolio Live</span>
+                  </button>
+                )}
 
                 <button
                   onClick={() => {

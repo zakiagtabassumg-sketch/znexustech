@@ -104,12 +104,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ config, onScrollToSect
                 {/* Quick Contact Line */}
                 <div className="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
                   <span className="truncate">{config.email}</span>
-                  <button
-                    onClick={onOpenCustomizer}
-                    className="text-amber-400 hover:underline text-[11px] font-semibold flex items-center space-x-1"
-                  >
-                    <span>Edit Profile Data</span>
-                  </button>
+                  {import.meta.env.DEV && (
+                    <button
+                      onClick={onOpenCustomizer}
+                      className="text-amber-400 hover:underline text-[11px] font-semibold flex items-center space-x-1"
+                    >
+                      <span>Edit Profile Data</span>
+                    </button>
+                  )}
                 </div>
 
               </div>
