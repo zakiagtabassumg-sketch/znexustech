@@ -84,14 +84,14 @@ export default function App() {
           onOpenCustomizer={() => setCustomizerOpen(true)}
         />
 
-        {/* Interactive ROI & Revenue Lift Calculator */}
-        <RoiCalculatorSection
-          onScrollToContact={() => scrollToSection('contact')}
-        />
-
         {/* Services & Capabilities */}
         <ServicesSection
           onSelectService={handleSelectService}
+        />
+
+        {/* Case Studies & Featured Portfolio Works */}
+        <CaseStudiesSection
+          onSelectCaseStudy={handleSelectCaseStudy}
         />
 
         {/* Agency Team Section */}
@@ -99,9 +99,10 @@ export default function App() {
           onSelectMemberService={handleSelectService}
         />
 
-        {/* Case Studies & Revenue Proof */}
-        <CaseStudiesSection
-          onSelectCaseStudy={handleSelectCaseStudy}
+        {/* About Zakia Tabassum & ZNEXUSTECH Agency */}
+        <AboutSection
+          config={config}
+          onOpenCustomizer={() => setCustomizerOpen(true)}
         />
 
         {/* Gemini AI Website SEO Audit Tool */}
@@ -109,17 +110,16 @@ export default function App() {
           onScheduleCall={handleScheduleCallFromAudit}
         />
 
+        {/* Interactive ROI & Revenue Lift Calculator */}
+        <RoiCalculatorSection
+          onScrollToContact={() => scrollToSection('contact')}
+        />
+
         {/* Tech Stack & Official Certifications */}
         <TechStackCertifications />
 
         {/* Client Testimonials */}
         <TestimonialsSection />
-
-        {/* About Zakia Tabassum & ZNEXUSTECH */}
-        <AboutSection
-          config={config}
-          onOpenCustomizer={() => setCustomizerOpen(true)}
-        />
 
         {/* Contact & Strategy Booking */}
         <ContactBookingSection

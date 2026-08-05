@@ -17,10 +17,11 @@ export const Navbar: React.FC<NavbarProps> = ({ config, onOpenCustomizer, onScro
   const navItems = [
     { label: 'Home', id: 'hero' },
     { label: 'Services', id: 'services' },
-    { label: 'Agency Team', id: 'team' },
     { label: 'Case Studies', id: 'case-studies' },
-    { label: 'ROI Calculator', id: 'calculator' },
+    { label: 'Agency Team', id: 'team' },
+    { label: 'About', id: 'about' },
     { label: 'AI SEO Audit', id: 'audit' },
+    { label: 'ROI Calculator', id: 'calculator' },
     { label: 'Testimonials', id: 'testimonials' },
     { label: 'Contact', id: 'contact' },
   ];
