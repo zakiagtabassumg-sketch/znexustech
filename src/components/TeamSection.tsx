@@ -113,7 +113,7 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ onSelectMemberService 
               key={member.id}
               className="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-slate-700 transition-all duration-300 shadow-xl group hover:shadow-2xl hover:shadow-orange-950/20 h-full"
             >
-              <div className="flex-1 flex flex-col space-y-5">
+              <div className="flex-1 flex flex-col justify-between space-y-5">
                 
                 {/* Image & Badge Header */}
                 <div className="relative">
@@ -124,7 +124,7 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ onSelectMemberService 
                       referrerPolicy="no-referrer"
                       onError={(e) => {
                         e.currentTarget.onerror = null;
-                        if (member.id === 'zoya') e.currentTarget.src = '/zoya_dev_photo_1785864314786.jpg';
+                        if (member.id === 'zoya') e.currentTarget.src = '/zoya_dev_photo_1785969379138.jpg';
                         else if (member.id === 'sadia') e.currentTarget.src = '/sadia_seo_photo_1785864327769.jpg';
                         else if (member.id === 'javeriya') e.currentTarget.src = '/javeriya_bot_photo_1785864340391.jpg';
                         else e.currentTarget.src = '/zakia_tabassum_profile_1785831452707.jpg';
@@ -151,7 +151,7 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ onSelectMemberService 
 
                 {/* Member Info */}
                 <div className="space-y-2 flex-1 flex flex-col justify-start">
-                  <div className="flex items-center justify-between gap-2">
+                  <div className="flex items-center justify-between gap-2 min-h-[1.75rem]">
                     <h3 className="text-xl font-black text-white group-hover:text-amber-300 transition-colors">
                       {member.name}
                     </h3>
@@ -159,20 +159,20 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ onSelectMemberService 
                       {member.role}
                     </span>
                   </div>
-                  <p className="text-xs font-semibold text-slate-400">{member.title}</p>
+                  <p className="text-xs font-semibold text-slate-400 min-h-[2rem] flex items-center">{member.title}</p>
                   <p className="text-xs text-slate-300 leading-relaxed pt-1">
                     {member.bio}
                   </p>
                 </div>
 
                 {/* Key Skills Bullet List */}
-                <div className="pt-3 space-y-2 border-t border-slate-800/80">
+                <div className="pt-3 space-y-2 border-t border-slate-800/80 mt-auto">
                   <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400">Core Expertise</div>
                   <ul className="space-y-1.5 text-xs text-slate-300">
                     {member.specialties.map((spec, i) => (
                       <li key={i} className="flex items-start space-x-2">
                         <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
-                        <span>{spec}</span>
+                        <span className="leading-tight">{spec}</span>
                       </li>
                     ))}
                   </ul>
